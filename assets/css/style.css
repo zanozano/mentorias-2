@@ -1,0 +1,42 @@
+.padre {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 600px;
+    height: 600px;
+    background-color: darkgrey;
+}
+
+.column {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+
+.hijo1 {
+    width: 100px;
+    height: 100px;
+    background-color: chocolate;
+
+}
+
+.hijo2 {
+    width: 100px;
+    height: 100px;
+    background-color: chocolate;
+}
+
+.hijo3 {
+    width: 100px;
+    height: 100px;
+    background-color: chocolate;
+}
+
+.hijo4 {
+    width: 100px;
+    height: 100px;
+    background-color: chocolate;
+}

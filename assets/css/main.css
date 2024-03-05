@@ -1,0 +1,85 @@
+:root {
+    --color-primario: #EA5EF6;
+    --color-secondario: #161515;
+    --color-lineal: linear-gradient(180deg, rgba(234, 94, 246, 1) 0%, rgba(22, 21, 21, 1) 100%);
+    --color-custom: #BB4AC5;
+}
+
+body {
+    font-family: 'Roboto';
+    color: #ffffff;
+}
+
+
+header {
+    height: 60px;
+    width: 100%;
+    background: var(--color-lineal);
+}
+
+main {
+    padding: 50px 24px;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-secondario);
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.block-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+
+    & .btn-custom {
+        background-color: var(--color-custom);
+        border-radius: 20px;
+        height: 60px;
+    }
+}
+
+.block-input {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    & p {
+        opacity: 0.5;
+    }
+}
+
+.switch {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+
+    & p {
+        margin: 0;
+    }
+
+    & .form-switch {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    & .btn-custom-2 {
+        background-color: var(--color-custom);
+        border-radius: 50px;
+        height: 54px;
+    }
+
+    & p {
+        text-align: center;
+    }
+
+    & span {
+        opacity: 0.5;
+    }
+}
