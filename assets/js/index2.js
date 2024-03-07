@@ -1,6 +1,34 @@
 $(document).ready(function () {
+
     let historico = []
 
+    let usuarios = [{
+        username: 'admin',
+        passsword: '555',
+        email: 'admin@alkewallet.com',
+        balance: 0,
+    },
+    {
+        username: 'personal',
+        passsword: '333',
+        email: 'personal@alkewallet.com',
+        balance: 0
+    }
+    ]
+
+    let usuario1 = {
+        username: 'admin',
+        passsword: '555',
+        email: 'admin@alkewallet.com',
+        balance: 0,
+    }
+
+    let usuario2 = {
+        username: 'personal',
+        passsword: '333',
+        email: 'personal@alkewallet.com',
+        balance: 0,
+    }
 
     $('#btnLogIn').click(function (event) {
         event.preventDefault();
@@ -8,7 +36,7 @@ $(document).ready(function () {
         let user = $('#userName').val()
         let password = $('#password').val()
 
-        if (user === 'admin' && password === '555') {
+        if (user === usuario1.username && password === usuario1.passsword) {
             $('#logInSuccess').removeClass('d-none')
             $('#logInSuccess').addClass('text-success text-center')
             $('#logInError').addClass('d-none')
@@ -30,21 +58,46 @@ $(document).ready(function () {
             let operacion = {
                 moneda: monedaSeleccionada,
                 monto: deposito,
-                date: new Date().toLocaleString()
+                fecha: new Date().toLocaleString()
             }
 
             historico.unshift(operacion);
             console.log(historico);
 
-            /* let arreglo = ['casa', 'perro', 'tomate'];
-            let objeto = {inmueble: 'casa', mascota:'perro', verdura:'tomate'};
+            ///////////////!
 
-            console.log(arreglo[0]);
-            console.log(arreglo[2]);
+            localStorage.setItem("historico", JSON.stringify(historico))
 
-            console.log('objetos.... ');
-            console.log(objeto['inmueble']);
-            console.log(objeto.mascota); */
+
+
+            // function borrarLocal() {
+            //     return localStorage.clear()
+            // }
+
+            // setTimeout(borrarLocal, 5000)
+
+
+            function recuperarLocal() {
+                return JSON.parse(localStorage.getItem('historico'))
+            }
+
+
+            let historicoNuevo = recuperarLocal()
+
+            let contenidoHTML = '';
+
+            historicoNuevo.forEach(function (item) {
+                contenidoHTML += `<tr>
+                                    <td>${item.monto}</td>
+                                    <td>${item.moneda}</td>
+                                    <td>${item.fecha}</td>
+                                </tr>`
+            })
+
+
+            setTimeout(function () {
+                $('#dataLocalStorage').html(contenidoHTML);
+            }, 1000);
 
 
         })
